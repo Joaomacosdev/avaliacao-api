@@ -8,5 +8,6 @@ import java.util.UUID;
 public interface AvaliacaoGateway {
     Avaliacao save(Avaliacao avaliacao);
     List<Avaliacao> findAll();
+    boolean existsById(UUID id);
     void deleteById(UUID id);
 }
