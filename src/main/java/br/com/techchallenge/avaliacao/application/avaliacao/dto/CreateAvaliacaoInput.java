@@ -17,8 +17,8 @@ public class CreateAvaliacaoInput {
         this.nota = builder.nota;
     }
 
-    public static Avaliacao.Builder builder() {
-        return new Avaliacao.Builder();
+    public static Builder builder() {
+        return new Builder();
     }
 
 

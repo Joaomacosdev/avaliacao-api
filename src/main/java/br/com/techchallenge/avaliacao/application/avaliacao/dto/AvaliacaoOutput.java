@@ -55,4 +55,20 @@ public class AvaliacaoOutput {
         }
 
     }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public Integer getNota() {
+        return nota;
+    }
+
+    public Instant getData() {
+        return data;
+    }
 }

@@ -7,7 +7,7 @@ import java.net.URI;
 import java.time.Instant;
 
 public class ProblemDetailFactory {
-    private static final String BASE_TYPE_URL = "https://api.medical-plataform-auth-service.com/errors/";
+    private static final String BASE_TYPE_URL = "https://api.avaliacao-plataform.com/errors/";
 
     public static ProblemDetail create(
             HttpStatus status,
