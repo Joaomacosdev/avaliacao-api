@@ -23,7 +23,7 @@ public class Avaliacao {
         validarNota(builder.nota);
 
 
-        this.id = builder.id;
+        this.id = builder.id != null ? builder.id : UUID.randomUUID();
         this.descricao = builder.descricao;
         this.nota = builder.nota;
         this.data = Instant.now();

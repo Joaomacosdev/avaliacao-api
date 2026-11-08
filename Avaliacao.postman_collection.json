@@ -46,7 +46,39 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": ""
+              "raw": "http://localhost:8080/api/avaliacao/v1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "avaliacao",
+                "v1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "buscar por id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/avaliacao/v1/7f2498c3-e297-493a-ad8f-3c1d63c5ae55",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "avaliacao",
+                "v1",
+                "7f2498c3-e297-493a-ad8f-3c1d63c5ae55"
+              ]
             }
           },
           "response": []
@@ -57,7 +89,7 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "http://localhost:8080/api/avaliacao/v1/1",
+              "raw": "http://localhost:8080/api/avaliacao/v1/5913d468-17a0-4bd6-889a-4ddc83158486",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -67,7 +99,7 @@
                 "api",
                 "avaliacao",
                 "v1",
-                "1"
+                "5913d468-17a0-4bd6-889a-4ddc83158486"
               ]
             }
           },

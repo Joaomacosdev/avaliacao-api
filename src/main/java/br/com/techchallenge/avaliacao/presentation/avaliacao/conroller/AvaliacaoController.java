@@ -2,6 +2,7 @@ package br.com.techchallenge.avaliacao.presentation.avaliacao.conroller;
 
 import br.com.techchallenge.avaliacao.application.avaliacao.usecase.CreateAvaliacaoUseCase;
 import br.com.techchallenge.avaliacao.application.avaliacao.usecase.DeleteByIdAvaliacaoUseCase;
+import br.com.techchallenge.avaliacao.application.avaliacao.usecase.FindByIdAvaliacaoUseCase;
 import br.com.techchallenge.avaliacao.application.avaliacao.usecase.ListAvaliacaoUseCase;
 import br.com.techchallenge.avaliacao.presentation.avaliacao.mapper.AvaliacaoPresentationMapper;
 import br.com.techchallenge.avaliacao.presentation.avaliacao.request.AvaliacaoRequest;
@@ -20,11 +21,14 @@ public class AvaliacaoController {
     private final CreateAvaliacaoUseCase createAvaliacaoUseCase;
     private final DeleteByIdAvaliacaoUseCase deleteByIdAvaliacaoUseCase;
     private final ListAvaliacaoUseCase listAvaliacaoUseCase;
+    private final FindByIdAvaliacaoUseCase findByIdAvaliacaoUseCase;
 
-    public AvaliacaoController(CreateAvaliacaoUseCase createAvaliacaoUseCase, DeleteByIdAvaliacaoUseCase deleteByIdAvaliacaoUseCase, ListAvaliacaoUseCase listAvaliacaoUseCase) {
+
+    public AvaliacaoController(CreateAvaliacaoUseCase createAvaliacaoUseCase, DeleteByIdAvaliacaoUseCase deleteByIdAvaliacaoUseCase, ListAvaliacaoUseCase listAvaliacaoUseCase, FindByIdAvaliacaoUseCase findByIdAvaliacaoUseCase) {
         this.createAvaliacaoUseCase = createAvaliacaoUseCase;
         this.deleteByIdAvaliacaoUseCase = deleteByIdAvaliacaoUseCase;
         this.listAvaliacaoUseCase = listAvaliacaoUseCase;
+        this.findByIdAvaliacaoUseCase = findByIdAvaliacaoUseCase;
     }
 
 
@@ -44,6 +48,13 @@ public class AvaliacaoController {
                 .toList();
 
         return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<AvaliacaoResponse> findById(@PathVariable UUID id) {
+        var response = findByIdAvaliacaoUseCase.execute(id);
+
+        return ResponseEntity.ok(AvaliacaoPresentationMapper.toResponse(response));
     }
 
     @DeleteMapping("/{id}")

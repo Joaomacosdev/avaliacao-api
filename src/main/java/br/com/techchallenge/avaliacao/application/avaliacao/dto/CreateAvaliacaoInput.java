@@ -1,7 +1,5 @@
 package br.com.techchallenge.avaliacao.application.avaliacao.dto;
 
-import br.com.techchallenge.avaliacao.domain.avaliacao.entiy.Avaliacao;
-
 import java.util.UUID;
 
 public class CreateAvaliacaoInput {
@@ -11,7 +9,7 @@ public class CreateAvaliacaoInput {
     private Integer nota;
 
 
-    private CreateAvaliacaoInput(Builder builder) {
+    public CreateAvaliacaoInput(Builder builder) {
         this.id = builder.id;
         this.descricao = builder.descricao;
         this.nota = builder.nota;
