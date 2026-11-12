@@ -4,6 +4,7 @@ import br.com.techchallenge.avaliacao.application.avaliacao.usecase.CreateAvalia
 import br.com.techchallenge.avaliacao.application.avaliacao.usecase.DeleteByIdAvaliacaoUseCase;
 import br.com.techchallenge.avaliacao.application.avaliacao.usecase.FindByIdAvaliacaoUseCase;
 import br.com.techchallenge.avaliacao.application.avaliacao.usecase.ListAvaliacaoUseCase;
+import br.com.techchallenge.avaliacao.domain.avaliacao.gateways.AvaliacaoEventPublisher;
 import br.com.techchallenge.avaliacao.domain.avaliacao.gateways.AvaliacaoGateway;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,8 +14,8 @@ public class AvaliacaoUseCaseConfig {
 
 
     @Bean
-    public CreateAvaliacaoUseCase createAvaliacaoUseCase(AvaliacaoGateway gateway) {
-        return new CreateAvaliacaoUseCase(gateway);
+    public CreateAvaliacaoUseCase createAvaliacaoUseCase(AvaliacaoGateway gateway,  AvaliacaoEventPublisher eventPublisher) {
+        return new CreateAvaliacaoUseCase(gateway,  eventPublisher);
     }
 
     @Bean

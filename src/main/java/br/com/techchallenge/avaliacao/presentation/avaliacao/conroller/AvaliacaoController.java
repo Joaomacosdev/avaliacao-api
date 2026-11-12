@@ -8,6 +8,7 @@ import br.com.techchallenge.avaliacao.presentation.avaliacao.mapper.AvaliacaoPre
 import br.com.techchallenge.avaliacao.presentation.avaliacao.request.AvaliacaoRequest;
 import br.com.techchallenge.avaliacao.presentation.avaliacao.response.AvaliacaoResponse;
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,7 +39,7 @@ public class AvaliacaoController {
         var output =  createAvaliacaoUseCase.execute(input);
         var response = AvaliacaoPresentationMapper.toResponse(output);
 
-        return ResponseEntity.ok(response);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
     @GetMapping

@@ -31,7 +31,7 @@ public class DynamoDBAvaliacaoGateway implements AvaliacaoGateway {
             AvaliacaoPersistenceMapper mapper) {
 
         this.tabela = client.table(
-                "avaliacao_jpa_entity",
+                "avaliacoes-dev",
                 TableSchema.fromBean(AvaliacaoJpaEntity.class)
         );
 
